@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anas Al-Homsi | أنس الحمصي — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Cairo:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#2563EB;--violet:#7C3AED;--navy:#0F2B6B;
+  --bg:#FFFFFF;--surf:#F8FAFC;--surf2:#EFF6FF;
+  --text:#0F172A;--muted:#64748B;--border:#E2E8F0;
+  --radius:14px;--sh:0 4px 24px rgba(15,23,42,.09);
+  --font-en:'Inter',sans-serif;--font-ar:'Cairo',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-en);color:var(--text);background:var(--bg);line-height:1.6;font-size:16px}
+html.ar body{font-family:var(--font-ar);direction:rtl;text-align:right}
+a{text-decoration:none;color:inherit}
+img{max-width:100%}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);padding:0 5%}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:68px;max-width:1200px;margin:0 auto}
+.logo{font-size:1.35rem;font-weight:800;background:linear-gradient(135deg,var(--blue),var(--violet));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.5px}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:.9rem;font-weight:500;color:var(--muted);transition:.2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.lang-btn{border:1.5px solid var(--border);background:transparent;padding:.35rem .85rem;border-radius:8px;cursor:pointer;font-size:.85rem;font-weight:600;color:var(--blue);transition:.2s;font-family:inherit}
+.lang-btn:hover{background:var(--surf2);border-color:var(--blue)}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;padding:5rem 5% 3rem;background:linear-gradient(160deg,#fff 55%,#EFF6FF 100%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-10%;right:-5%;width:500px;height:500px;background:radial-gradient(circle,rgba(37,99,235,.08) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-5%;left:0;width:400px;height:400px;background:radial-gradient(circle,rgba(124,58,237,.06) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;width:100%}
+.hero-content{z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:var(--surf2);border:1.5px solid rgba(37,99,235,.2);color:var(--blue);padding:.35rem 1rem;border-radius:999px;font-size:.8rem;font-weight:600;margin-bottom:1.5rem}
+.dot{width:7px;height:7px;background:#22C55E;border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.hero-name-wrap{margin-bottom:.75rem}
+.hero-name-en{font-size:3.2rem;font-weight:900;line-height:1.05;letter-spacing:-1.5px;color:var(--text)}
+.hero-name-ar{font-size:2.4rem;font-weight:800;color:var(--muted);font-family:var(--font-ar);margin-top:.2rem;letter-spacing:0}
+html.ar .hero-name-en{font-size:2.4rem;color:var(--muted)}
+html.ar .hero-name-ar{font-size:3.2rem;color:var(--text)}
+.hero-role{font-size:1.25rem;font-weight:600;color:var(--blue);min-height:2rem;margin-bottom:1.25rem}
+.cursor{display:inline-block;width:2px;height:1.1em;background:var(--blue);margin-left:3px;vertical-align:middle;animation:blink .7s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero-bio{color:var(--muted);font-size:1rem;max-width:480px;margin-bottom:2rem;line-height:1.75}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:linear-gradient(135deg,var(--blue),var(--violet));color:#fff;padding:.75rem 1.75rem;border-radius:10px;font-weight:600;font-size:.95rem;transition:.25s;box-shadow:0 4px 14px rgba(37,99,235,.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,.4)}
+.btn-outline{border:2px solid var(--border);color:var(--text);padding:.75rem 1.75rem;border-radius:10px;font-weight:600;font-size:.95rem;transition:.25s}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue);background:var(--surf2)}
+.hero-visual{display:flex;justify-content:center;align-items:center;z-index:1}
+.code-card{background:#0F172A;border-radius:16px;padding:1.5rem;font-family:var(--font-code);font-size:.8rem;color:#E2E8F0;box-shadow:0 20px 60px rgba(15,23,42,.25);min-width:320px;max-width:360px}
+.code-bar{display:flex;gap:.5rem;margin-bottom:1rem}
+.code-dot{width:12px;height:12px;border-radius:50%}
+.cd1{background:#FF5F57}.cd2{background:#FFBD2E}.cd3{background:#28CA41}
+.code-line{margin:.35rem 0}
+.c-kw{color:#C792EA}.c-fn{color:#82AAFF}.c-str{color:#C3E88D}.c-comment{color:#546E7A}.c-num{color:#F78C6C}.c-op{color:#89DDFF}
+
+/* ── STATS ── */
+.stats{background:var(--navy);padding:2.5rem 5%}
+.stats-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.stat-num{font-size:2.4rem;font-weight:800;color:#fff;line-height:1}
+.stat-label{font-size:.85rem;color:rgba(255,255,255,.6);margin-top:.35rem}
+
+/* ── SECTIONS ── */
+section{padding:5rem 5%}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-tag{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--blue);margin-bottom:.5rem}
+.section-title{font-size:2.2rem;font-weight:800;letter-spacing:-.5px;margin-bottom:.75rem}
+.section-sub{color:var(--muted);font-size:1rem;max-width:560px;margin-bottom:3rem}
+
+/* ── ABOUT ── */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.about-text p{color:var(--muted);margin-bottom:1rem;line-height:1.8}
+.about-highlights{display:flex;flex-direction:column;gap:.75rem}
+.highlight{display:flex;align-items:center;gap:.75rem;background:var(--surf2);border:1px solid rgba(37,99,235,.15);border-radius:10px;padding:.85rem 1.25rem;font-size:.9rem;font-weight:500}
+.hl-icon{font-size:1.25rem}
+
+/* ── SKILLS ── */
+.skills-bg{background:var(--surf)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.skill-cat{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--sh)}
+.skill-cat-title{font-size:.85rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.skill-cat-title::before{content:'';display:block;width:4px;height:16px;background:linear-gradient(var(--blue),var(--violet));border-radius:2px}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem}
+.tag{background:var(--surf2);color:var(--navy);border:1px solid rgba(37,99,235,.15);padding:.3rem .75rem;border-radius:999px;font-size:.78rem;font-weight:500;font-family:var(--font-code)}
+
+/* ── PROJECTS ── */
+.filter-bar{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2.5rem}
+.filter-btn{padding:.45rem 1.1rem;border:1.5px solid var(--border);background:transparent;border-radius:999px;font-size:.82rem;font-weight:600;cursor:pointer;transition:.2s;color:var(--muted);font-family:inherit}
+.filter-btn:hover{border-color:var(--blue);color:var(--blue)}
+.filter-btn.active{background:var(--blue);color:#fff;border-color:var(--blue)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem}
+.proj-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.5rem;box-shadow:var(--sh);transition:.25s;display:flex;flex-direction:column;gap:1rem}
+.proj-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(15,23,42,.12);border-color:rgba(37,99,235,.25)}
+.proj-card.hidden{display:none}
+.proj-header{display:flex;justify-content:space-between;align-items:flex-start;gap:.5rem}
+.proj-cat-badge{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:.25rem .65rem;border-radius:999px;white-space:nowrap;flex-shrink:0}
+.proj-title{font-size:1rem;font-weight:700;line-height:1.3;color:var(--text)}
+.proj-desc{font-size:.875rem;color:var(--muted);line-height:1.65}
+.proj-bullets{list-style:none;display:flex;flex-direction:column;gap:.35rem}
+.proj-bullets li{font-size:.82rem;color:var(--muted);display:flex;gap:.5rem;line-height:1.5}
+.proj-bullets li::before{content:'▸';color:var(--blue);flex-shrink:0;margin-top:.05rem}
+html.ar .proj-bullets li::before{content:'◂'}
+.proj-tech{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:auto}
+.tech-tag{background:var(--surf);color:var(--navy);border:1px solid var(--border);padding:.2rem .55rem;border-radius:6px;font-size:.7rem;font-family:var(--font-code);font-weight:500}
+.proj-links{display:flex;gap:.75rem;margin-top:.25rem}
+.proj-link{display:flex;align-items:center;gap:.35rem;font-size:.8rem;font-weight:600;color:var(--muted);transition:.2s;border:1px solid var(--border);padding:.3rem .75rem;border-radius:8px}
+.proj-link:hover{color:var(--blue);border-color:var(--blue)}
+
+/* Category colors */
+.cat-se{background:#EFF6FF;color:#1D4ED8}
+.cat-be{background:#F5F3FF;color:#6D28D9}
+.cat-fs{background:#EEF2FF;color:#4338CA}
+.cat-fe{background:#ECFEFF;color:#0E7490}
+.cat-wa{background:#F0FDF4;color:#15803D}
+.cat-mb{background:#FFF7ED;color:#C2410C}
+
+/* ── CONTACT ── */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
+.contact-card{background:var(--surf);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;transition:.2s;font-size:.9rem;font-weight:500}
+.contact-card:hover{border-color:var(--blue);background:var(--surf2);color:var(--blue)}
+.contact-icon{font-size:1.4rem}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);color:rgba(255,255,255,.6);text-align:center;padding:2rem 5%;font-size:.85rem}
+footer span{color:#fff;font-weight:600}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .hero-visual{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .stats-inner{grid-template-columns:repeat(2,1fr)}
+  .hero-name-en,.hero-name-ar{font-size:2.4rem}
+  .nav-links{display:none}
+}
+@media(max-width:600px){
+  .stats-inner{grid-template-columns:1fr 1fr}
+  .section-title{font-size:1.75rem}
+  .hero-name-en,.hero-name-ar{font-size:2rem}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="logo">AH</div>
+    <ul class="nav-links">
+      <li><a href="#about" class="t" data-en="About" data-ar="عني">About</a></li>
+      <li><a href="#skills" class="t" data-en="Skills" data-ar="المهارات">Skills</a></li>
+      <li><a href="#projects" class="t" data-en="Projects" data-ar="المشاريع">Projects</a></li>
+      <li><a href="#contact" class="t" data-en="Contact" data-ar="التواصل">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="lang-btn" onclick="toggleLang()" id="lang-btn">عربي</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        <span class="t" data-en="Available for Opportunities" data-ar="متاح للفرص الوظيفية">Available for Opportunities</span>
+      </div>
+      <div class="hero-name-wrap">
+        <div class="hero-name-en">Anas Al-Homsi</div>
+        <div class="hero-name-ar">أنس الحمصي</div>
+      </div>
+      <div class="hero-role"><span id="typewriter"></span><span class="cursor"></span></div>
+      <p class="hero-bio t"
+        data-en="Multidisciplinary technology professional with 8+ years of experience in software engineering, full-stack development, mobile apps, and cloud infrastructure. Building scalable, secure, and high-performance digital solutions."
+        data-ar="مهندس برمجيات متعدد التخصصات بخبرة أكثر من 8 سنوات في تطوير البرمجيات، تطبيقات الويب والموبايل، والبنية السحابية. أبني حلولاً رقمية قابلة للتوسع، آمنة، وعالية الأداء.">
+        Multidisciplinary technology professional with 8+ years of experience in software engineering, full-stack development, mobile apps, and cloud infrastructure. Building scalable, secure, and high-performance digital solutions.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary t" data-en="View Projects" data-ar="استعرض المشاريع">View Projects</a>
+        <a href="https://github.com/Anas379110" target="_blank" class="btn-outline t" data-en="View GitHub" data-ar="زيارة GitHub">View GitHub</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="code-card">
+        <div class="code-bar"><div class="code-dot cd1"></div><div class="code-dot cd2"></div><div class="code-dot cd3"></div></div>
+        <div class="code-line"><span class="c-comment">// Anas Al-Homsi</span></div>
+        <div class="code-line"><span class="c-kw">const</span> <span class="c-fn">engineer</span> <span class="c-op">=</span> {</div>
+        <div class="code-line">&nbsp;&nbsp;name: <span class="c-str">"Anas Al-Homsi"</span>,</div>
+        <div class="code-line">&nbsp;&nbsp;role: <span class="c-str">"Full Stack Dev"</span>,</div>
+        <div class="code-line">&nbsp;&nbsp;exp: <span class="c-num">8</span> <span class="c-op">+</span> <span class="c-str">" years"</span>,</div>
+        <div class="code-line">&nbsp;&nbsp;projects: <span class="c-num">35</span>,</div>
+        <div class="code-line">&nbsp;&nbsp;stack: [</div>
+        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"React"</span>, <span class="c-str">"ASP.NET"</span>,</div>
+        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Flutter"</span>, <span class="c-str">"Python"</span>,</div>
+        <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Docker"</span>, <span class="c-str">"AWS"</span></div>
+        <div class="code-line">&nbsp;&nbsp;]</div>
+        <div class="code-line">}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stats-inner">
+    <div><div class="stat-num">8+</div><div class="stat-label t" data-en="Years Experience" data-ar="سنوات خبرة">Years Experience</div></div>
+    <div><div class="stat-num">35</div><div class="stat-label t" data-en="Projects Built" data-ar="مشروع منجز">Projects Built</div></div>
+    <div><div class="stat-num">6</div><div class="stat-label t" data-en="Specializations" data-ar="تخصصات">Specializations</div></div>
+    <div><div class="stat-num">200+</div><div class="stat-label t" data-en="Algorithms Solved" data-ar="خوارزمية محلولة">Algorithms Solved</div></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-tag t" data-en="WHO I AM" data-ar="من أنا">WHO I AM</div>
+    <h2 class="section-title t" data-en="About Me" data-ar="نبذة عني">About Me</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="t"
+          data-en="I'm Anas Al-Homsi, a full-stack software engineer with 8+ years of experience designing and shipping production-grade systems end to end — from database schema and API architecture to polished, accessible frontends."
+          data-ar="أنا أنس الحمصي، مهندس برمجيات Full Stack بخبرة أكثر من 8 سنوات في تصميم وبناء أنظمة إنتاجية متكاملة من الألف إلى الياء — من تصميم قاعدة البيانات ومعمارية الـ API إلى واجهات احترافية سهلة الاستخدام.">
+          I'm Anas Al-Homsi, a full-stack software engineer with 8+ years of experience designing and shipping production-grade systems end to end — from database schema and API architecture to polished, accessible frontends.
+        </p>
+        <p class="t"
+          data-en="My work spans multi-vendor marketplaces, hospital and school management platforms, ERP systems, and secure government-style desktop applications — each built with modular architecture, proper testing, and real-world constraints like localization, payments, and data protection in mind."
+          data-ar="تتنوع أعمالي بين أسواق إلكترونية متعددة البائعين، أنظمة إدارة مشافي ومدارس، أنظمة ERP، وتطبيقات سطح مكتب حكومية آمنة — جميعها مبنية بمعمارية معيارية، اختبارات فعلية، ومراعاة لمتطلبات واقعية كالتعريب والدفع الإلكتروني وحماية البيانات.">
+          My work spans multi-vendor marketplaces, hospital and school management platforms, ERP systems, and secure government-style desktop applications — each built with modular architecture, proper testing, and real-world constraints like localization, payments, and data protection in mind.
+        </p>
+        <p class="t"
+          data-en="I hold two bachelor's degrees — IT & Software Engineering, and Business Administration — a combination that lets me bridge technical execution with product and business thinking."
+          data-ar="أحمل درجتي بكالوريوس — هندسة تقنية المعلومات والبرمجيات، وإدارة الأعمال — مزيج يمكنني من ربط التنفيذ التقني بالتفكير المنتجي والتجاري.">
+          I hold two bachelor's degrees — IT & Software Engineering, and Business Administration — a combination that lets me bridge technical execution with product and business thinking.
+        </p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight"><span class="hl-icon">🎓</span><span class="t" data-en="SVU — B.Sc. IT Engineering & Software Engineering" data-ar="جامعة سوريا الافتراضية — هندسة تقنية المعلومات">SVU — B.Sc. IT Engineering & Software Engineering</span></div>
+        <div class="highlight"><span class="hl-icon">🎓</span><span class="t" data-en="University of the People — B.Sc. Business Administration" data-ar="جامعة الشعب — إدارة الأعمال">University of the People — B.Sc. Business Administration</span></div>
+        <div class="highlight"><span class="hl-icon">📍</span><span class="t" data-en="Based in Syria — Open to Remote & Relocation" data-ar="مقيم في سوريا — متاح للعمل عن بُعد أو الانتقال">Based in Syria — Open to Remote & Relocation</span></div>
+        <div class="highlight"><span class="hl-icon">🌐</span><span class="t" data-en="Bilingual: Arabic (Native) | English (Professional)" data-ar="ثنائي اللغة: العربية (لغة أم) | الإنجليزية (احترافية)">Bilingual: Arabic (Native) | English (Professional)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="skills-bg">
+  <div class="section-inner">
+    <div class="section-tag t" data-en="WHAT I USE" data-ar="ما أستخدمه">WHAT I USE</div>
+    <h2 class="section-title t" data-en="Technical Skills" data-ar="المهارات التقنية">Technical Skills</h2>
+    <p class="section-sub t" data-en="A comprehensive stack covering frontend, backend, mobile, DevOps, and cloud." data-ar="مجموعة تقنية شاملة تغطي الواجهة الأمامية، الخلفية، الموبايل، DevOps، والسحابة.">A comprehensive stack covering frontend, backend, mobile, DevOps, and cloud.</p>
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="Programming Languages" data-ar="لغات البرمجة">Programming Languages</div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">Java</span><span class="tag">C#</span><span class="tag">C++</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span><span class="tag">Dart</span><span class="tag">PHP</span></div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="Frontend" data-ar="الواجهة الأمامية">Frontend</div>
+        <div class="tags"><span class="tag">React</span><span class="tag">Angular</span><span class="tag">Next.js</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Tailwind</span><span class="tag">Redux Toolkit</span><span class="tag">NgRx</span><span class="tag">TanStack Query</span><span class="tag">RxJS</span><span class="tag">React Hook Form</span><span class="tag">Zod</span><span class="tag">next-intl (i18n/RTL)</span></div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="Backend" data-ar="الواجهة الخلفية">Backend</div>
+        <div class="tags"><span class="tag">ASP.NET Core</span><span class="tag">Node.js</span><span class="tag">NestJS</span><span class="tag">Django</span><span class="tag">FastAPI</span><span class="tag">REST APIs</span><span class="tag">Microservices</span><span class="tag">SignalR</span><span class="tag">WebSockets</span><span class="tag">GraphQL</span></div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="Mobile" data-ar="الموبايل">Mobile</div>
+        <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">BLoC</span><span class="tag">Provider</span><span class="tag">Riverpod</span><span class="tag">Firebase</span><span class="tag">Google Maps</span><span class="tag">Fastlane</span></div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="Databases" data-ar="قواعد البيانات">Databases</div>
+        <div class="tags"><span class="tag">PostgreSQL</span><span class="tag">SQL Server</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">Redis</span><span class="tag">Elasticsearch</span><span class="tag">SQLite</span><span class="tag">Firebase Firestore</span><span class="tag">Prisma ORM</span><span class="tag">Supabase</span></div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="DevOps & Cloud" data-ar="DevOps والسحابة">DevOps & Cloud</div>
+        <div class="tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span><span class="tag">Terraform</span><span class="tag">Ansible</span><span class="tag">AWS</span><span class="tag">Azure</span><span class="tag">GCP</span></div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="Architecture & Patterns" data-ar="المعمارية والأنماط">Architecture & Patterns</div>
+        <div class="tags"><span class="tag">DDD</span><span class="tag">CQRS</span><span class="tag">Event Sourcing</span><span class="tag">Saga Pattern</span><span class="tag">Clean Architecture</span><span class="tag">SOLID</span><span class="tag">MVVM</span><span class="tag">Repository</span></div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="Message Brokers & Monitoring" data-ar="ناقلات الرسائل والمراقبة">Message Brokers & Monitoring</div>
+        <div class="tags"><span class="tag">Kafka</span><span class="tag">RabbitMQ</span><span class="tag">Redis Streams</span><span class="tag">Azure Service Bus</span><span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">ELK Stack</span></div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="Testing & QA" data-ar="الاختبارات وضمان الجودة">Testing & QA</div>
+        <div class="tags"><span class="tag">Jest</span><span class="tag">Vitest</span><span class="tag">xUnit</span><span class="tag">React Testing Library</span><span class="tag">Playwright</span><span class="tag">Cypress</span><span class="tag">Unit Testing</span><span class="tag">E2E Testing</span></div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="Desktop & Systems" data-ar="سطح المكتب والأنظمة">Desktop & Systems</div>
+        <div class="tags"><span class="tag">C# WinForms</span><span class="tag">.NET 8</span><span class="tag">ADO.NET</span><span class="tag">3-Tier Architecture</span></div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="Product & Delivery" data-ar="المنتج والتسليم">Product & Delivery</div>
+        <div class="tags"><span class="tag">System Design</span><span class="tag">Agile / Scrum</span><span class="tag">API Documentation</span><span class="tag">Code Review</span><span class="tag">Technical Writing</span><span class="tag">OWASP Security Practices</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-tag t" data-en="WHAT I BUILT" data-ar="ما بنيته">WHAT I BUILT</div>
+    <h2 class="section-title t" data-en="Projects" data-ar="المشاريع">Projects</h2>
+    <p class="section-sub t" data-en="35 projects across 6 specializations, including 5 full production-grade systems with public source on GitHub — click GitHub to explore the code." data-ar="35 مشروعاً عبر 6 تخصصات، من ضمنها 5 مشاريع إنتاجية كاملة بمصدر مفتوح على GitHub — اضغط GitHub للاطلاع على الكود.">35 projects across 6 specializations, including 5 full production-grade systems with public source on GitHub — click GitHub to explore the code.</p>
+    <div class="filter-bar" id="filter-bar">
+      <button class="filter-btn active t" data-en="All (35)" data-ar="الكل (35)" data-cat="all" onclick="filterProjects('all',this)">All (35)</button>
+      <button class="filter-btn t" data-en="Software Eng." data-ar="هندسة برمجيات" data-cat="se" onclick="filterProjects('se',this)">Software Eng.</button>
+      <button class="filter-btn t" data-en="Backend" data-ar="خلفية" data-cat="be" onclick="filterProjects('be',this)">Backend</button>
+      <button class="filter-btn t" data-en="Full Stack" data-ar="متكامل" data-cat="fs" onclick="filterProjects('fs',this)">Full Stack</button>
+      <button class="filter-btn t" data-en="Frontend" data-ar="أمامية" data-cat="fe" onclick="filterProjects('fe',this)">Frontend</button>
+      <button class="filter-btn t" data-en="Web / App" data-ar="ويب / تطبيق" data-cat="wa" onclick="filterProjects('wa',this)">Web / App</button>
+      <button class="filter-btn t" data-en="Mobile" data-ar="موبايل" data-cat="mb" onclick="filterProjects('mb',this)">Mobile</button>
+    </div>
+    <div class="projects-grid" id="projects-grid"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-tag t" data-en="GET IN TOUCH" data-ar="تواصل معي">GET IN TOUCH</div>
+    <h2 class="section-title t" data-en="Contact" data-ar="التواصل">Contact</h2>
+    <p class="section-sub t" data-en="Open to freelance projects, full-time roles, and collaborations." data-ar="متاح للمشاريع المستقلة، الوظائف الكاملة، والتعاون.">Open to freelance projects, full-time roles, and collaborations.</p>
+    <div class="contact-grid">
+      <a href="mailto:homsi434q@gmail.com" class="contact-card"><span class="contact-icon">📧</span>homsi434q@gmail.com</a>
+      <a href="https://linkedin.com/in/anas-alhomsi-8562293b0" target="_blank" class="contact-card"><span class="contact-icon">🔗</span>LinkedIn Profile</a>
+      <a href="https://github.com/Anas379110" target="_blank" class="contact-card"><span class="contact-icon">💻</span>github.com/Anas379110</a>
+      <a href="https://roadmap.sh/u/anas379110" target="_blank" class="contact-card"><span class="contact-icon">🗺️</span>roadmap.sh/u/anas379110</a>
+      <a href="tel:+963995263075" class="contact-card"><span class="contact-icon">📞</span>+963 995 263 075</a>
+      <a href="#" class="contact-card"><span class="contact-icon">🏢</span>OneTech Solutions — Syria</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Built by <span>Anas Al-Homsi</span> · <span>أنس الحمصي</span> · © 2025 · <span>OneTech Solutions</span></p>
+</footer>
+
+<script>
+// ── PROJECTS DATA ──────────────────────────────────────────────────────────────
+const PROJECTS = [
+  // SOFTWARE ENGINEER
+  {cat:'se',en:{title:'Enterprise Resource Planning (ERP) System',desc:'Modular ERP covering HR, Inventory, Finance & Reporting with microservices.',bullets:['Microservices on Docker + Kubernetes','CI/CD via Jenkins & GitHub Actions','40% response time improvement via Redis']},ar:{title:'نظام تخطيط موارد المؤسسة (ERP)',desc:'نظام ERP متكامل يغطي HR، المخزون، المالية، والتقارير.',bullets:['Microservices على Docker + Kubernetes','CI/CD عبر Jenkins & GitHub Actions','تحسين وقت الاستجابة 40% عبر Redis']},tech:['C#','ASP.NET Core','React','PostgreSQL','Docker','Kubernetes','Redis']},
+  {cat:'se',en:{title:'Distributed Background Task Processing Platform',desc:'Async task platform handling 10,000+ concurrent jobs with Celery & Redis.',bullets:['Priority queues, retry logic & dead-letter queues','FastAPI REST for task monitoring','Deployed on AWS EC2 with auto-scaling']},ar:{title:'منصة معالجة المهام الخلفية الموزعة',desc:'منصة معالجة غير متزامنة تتعامل مع أكثر من 10,000 مهمة متزامنة.',bullets:['طوابير أولوية، منطق إعادة المحاولة، وطوابير الأخطاء','FastAPI REST لمراقبة المهام','نشر على AWS EC2 مع Auto-Scaling']},tech:['Python','Celery','Redis','FastAPI','PostgreSQL','Docker','AWS']},
+  {cat:'se',en:{title:'Real-Time Collaborative Code Editor',desc:'Browser-based multi-user code editor with Operational Transformation.',bullets:['OT algorithm for real-time conflict resolution','Redis Pub/Sub for horizontally-scaled servers','Syntax highlighting for 20+ languages']},ar:{title:'محرر أكواد تشاركي في الوقت الفعلي',desc:'محرر أكواد متعدد المستخدمين في المتصفح مع خوارزمية OT.',bullets:['خوارزمية OT لحل التعارضات في الوقت الفعلي','Redis Pub/Sub للخوادم الموزعة أفقياً','تمييز صيغة لأكثر من 20 لغة']},tech:['TypeScript','Node.js','React','WebSockets','Redis Pub/Sub','PostgreSQL','Docker']},
+  {cat:'se',en:{title:'DevOps Automation & Infrastructure Management',desc:'IaC platform with Terraform + Ansible for automated cloud provisioning.',bullets:['Infrastructure as Code on AWS with Terraform','Ansible playbooks for server configuration','Reduced deployment time from 2h to 15min']},ar:{title:'منصة أتمتة DevOps وإدارة البنية التحتية',desc:'منصة IaC باستخدام Terraform + Ansible للتزويد السحابي التلقائي.',bullets:['Infrastructure as Code على AWS بـ Terraform','Ansible Playbooks لإعداد الخوادم','خفض وقت النشر من ساعتين إلى 15 دقيقة']},tech:['Terraform','Ansible','Jenkins','Docker','Kubernetes','AWS','Prometheus','Grafana']},
+  {cat:'se',en:{title:'AI-Powered Code Review & Bug Detection Tool',desc:'ML model detecting code smells & bugs in GitHub pull requests.',bullets:['ML model trained on open-source repositories','FastAPI + GitHub webhook integration','React dashboard for code quality metrics']},ar:{title:'أداة مراجعة الأكواد واكتشاف الأخطاء بالذكاء الاصطناعي',desc:'نموذج ML يكتشف مشاكل الكود والأخطاء في طلبات GitHub.',bullets:['نموذج ML مدرب على مستودعات مفتوحة المصدر','FastAPI + تكامل GitHub Webhook','لوحة React لمقاييس جودة الكود']},tech:['Python','FastAPI','scikit-learn','PostgreSQL','React','TypeScript','Docker','GitHub API']},
+  // BACKEND
+  {cat:'be',en:{title:'Scalable E-Commerce Backend API Platform',desc:'Multi-vendor REST API handling 100,000+ daily requests with DDD patterns.',bullets:['JWT + OAuth2 with refresh token rotation','Sub-100ms response via Redis + Dapper','Kubernetes with horizontal pod autoscaling']},ar:{title:'منصة API خلفية قابلة للتوسع للتجارة الإلكترونية',desc:'API للبيع متعدد الموردين يتعامل مع أكثر من 100,000 طلب يومياً.',bullets:['JWT + OAuth2 مع تدوير Refresh Token','استجابة أقل من 100ms عبر Redis + Dapper','Kubernetes مع HPA']},tech:['ASP.NET Core','EF Core','Dapper','PostgreSQL','Redis','Docker','Kubernetes','Swagger']},
+  {cat:'be',en:{title:'Real-Time Notification & Messaging Service',desc:'SignalR-based notification service supporting 5,000+ concurrent connections.',bullets:['Redis backplane for distributed WebSockets','RabbitMQ for reliable event processing','99.9% uptime with circuit breaker patterns']},ar:{title:'خدمة الإشعارات والرسائل في الوقت الفعلي',desc:'خدمة إشعارات SignalR تدعم أكثر من 5,000 اتصال متزامن.',bullets:['Redis Backplane للـ WebSockets الموزع','RabbitMQ لمعالجة الأحداث بشكل موثوق','99.9% uptime مع نمط Circuit Breaker']},tech:['ASP.NET Core','SignalR','WebSockets','Redis Pub/Sub','RabbitMQ','Docker','Prometheus']},
+  {cat:'be',en:{title:'Centralized Authentication & Authorization Microservice',desc:'Standalone auth service with RBAC, ABAC, and OAuth2 PKCE flow.',bullets:['Multi-tenant auth with per-tenant config','OAuth2 Authorization Code + PKCE flow','Brute-force protection & audit logging']},ar:{title:'خدمة المصادقة والتفويض المركزية',desc:'خدمة مصادقة مستقلة مع RBAC و ABAC وتدفق OAuth2 PKCE.',bullets:['مصادقة متعددة المستأجرين','تدفق OAuth2 Authorization Code + PKCE','حماية من Brute-Force وسجل تدقيق']},tech:['ASP.NET Core','JWT','OAuth2','SQL Server','Docker','Redis','Serilog','xUnit']},
+  {cat:'be',en:{title:'Event-Driven Order Processing System',desc:'Microservices order system using Kafka as distributed event bus.',bullets:['Saga pattern for distributed transactions','Outbox Pattern for transactional consistency','Kafka consumer lag-based HPA on Kubernetes']},ar:{title:'نظام معالجة الطلبات المبني على الأحداث',desc:'نظام طلبات بـ Microservices يستخدم Kafka كـ Event Bus.',bullets:['نمط Saga للمعاملات الموزعة','Outbox Pattern للاتساق المعاملاتي','HPA على Kubernetes بناءً على Kafka Consumer Lag']},tech:['C#','ASP.NET Core','Apache Kafka','PostgreSQL','Docker','Kubernetes','Saga Pattern']},
+  {cat:'be',en:{title:'High-Performance REST API with Advanced Caching',desc:'Read-heavy API serving 50,000+ requests/minute with sub-50ms response.',bullets:['Multi-layer cache: IMemoryCache + Redis + HTTP','Nginx load balancing + SSL termination','Hangfire background jobs with monitoring']},ar:{title:'REST API عالي الأداء مع التخزين المؤقت المتقدم',desc:'API كثيف القراءة يخدم أكثر من 50,000 طلب/دقيقة.',bullets:['تخزين مؤقت متعدد الطبقات: IMemoryCache + Redis + HTTP','Nginx Load Balancing + SSL Termination','مهام خلفية بـ Hangfire مع لوحة مراقبة']},tech:['ASP.NET Core','Dapper','Redis','PostgreSQL','Nginx','Docker','Hangfire']},
+  // FULL STACK
+  {cat:'fs',en:{title:'Full-Stack Job Board & Recruitment Platform',desc:'End-to-end job listing platform with employer/candidate portals.',bullets:['Next.js SSR + PostgreSQL full-text search','AWS ECS Fargate + RDS + S3 + CloudFront','95+ Lighthouse SEO score with structured data']},ar:{title:'منصة لوحة الوظائف والتوظيف',desc:'منصة وظائف متكاملة مع بوابة صاحب العمل والمرشح.',bullets:['Next.js SSR + بحث نصي كامل بـ PostgreSQL','AWS ECS Fargate + RDS + S3 + CloudFront','95+ Lighthouse SEO مع Structured Data']},tech:['React','TypeScript','TanStack Query','ASP.NET Core','PostgreSQL','Redis','Docker','AWS']},
+  {cat:'fs',en:{title:'Multi-Tenant SaaS Dashboard Application',desc:'SaaS platform with tenant data isolation and Azure AD enterprise SSO.',bullets:['Angular dashboard with D3.js + Chart.js','Azure Service Bus for event-driven services','RBAC with per-tenant permission management']},ar:{title:'لوحة تحكم SaaS متعددة المستأجرين',desc:'منصة SaaS مع عزل بيانات المستأجرين وـ Azure AD SSO.',bullets:['لوحة Angular مع D3.js + Chart.js','Azure Service Bus للخدمات المبنية على الأحداث','RBAC مع إدارة صلاحيات لكل مستأجر']},tech:['Next.js','Angular','TypeScript','ASP.NET Core','SQL Server','Azure','SignalR']},
+  {cat:'fs',en:{title:'Real-Time Collaborative Project Management Tool',desc:'Full-stack Kanban board with WebSocket collaboration and offline-first.',bullets:['Socket.io + Redis Pub/Sub for scaled WS','Offline-first via Service Workers + IndexedDB','AWS EC2 auto-scaling + CloudFront CDN']},ar:{title:'أداة إدارة المشاريع التشاركية في الوقت الفعلي',desc:'لوحة Kanban بتعاون WebSocket ودعم العمل بدون إنترنت.',bullets:['Socket.io + Redis Pub/Sub للـ WebSockets الموزعة','Offline-First عبر Service Workers + IndexedDB','AWS EC2 Auto-Scaling + CloudFront CDN']},tech:['React','TypeScript','Node.js','Socket.io','MongoDB','Redis Pub/Sub','Docker','AWS']},
+  {cat:'fs',en:{title:'E-Commerce Platform with Admin Dashboard',desc:'Full-featured e-commerce with Django backend and Stripe integration.',bullets:['Celery async order processing + PDF invoices','Stripe webhooks for subscriptions & payments','Admin dashboard with analytics & inventory']},ar:{title:'منصة تجارة إلكترونية مع لوحة إدارة شاملة',desc:'منصة تجارة إلكترونية كاملة مع خلفية Django وتكامل Stripe.',bullets:['Celery لمعالجة الطلبات غير المتزامنة + فواتير PDF','Stripe Webhooks للاشتراكات والمدفوعات','لوحة إدارة مع تحليلات وإدارة مخزون']},tech:['Next.js','TypeScript','Django','PostgreSQL','Celery','Redis','AWS S3','Stripe','Docker']},
+  {cat:'fs',en:{title:'Social Learning Management System (LMS)',desc:'LMS with courses, video streaming, quizzes, certificates, and live Q&A.',bullets:['SignalR real-time discussion & Q&A forums','Azure Blob + CDN for video/document hosting','PDF certificates with gamification badges']},ar:{title:'نظام إدارة التعلم الاجتماعي (LMS)',desc:'LMS مع دورات، بث فيديو، اختبارات، شهادات، وجلسات مباشرة.',bullets:['SignalR للنقاشات والـ Q&A في الوقت الفعلي','Azure Blob + CDN لاستضافة الفيديو','شهادات PDF مع نظام نقاط وشارات']},tech:['Angular','ASP.NET Core','SQL Server','SignalR','Azure Blob','Azure CDN','Docker']},
+  // FRONTEND
+  {cat:'fe',en:{title:'Advanced Data Analytics Dashboard',desc:'Interactive dashboard with 15+ custom D3.js charts and real-time streaming.',bullets:['WCAG 2.1 AA accessible components','97/100 Lighthouse score with virtual scrolling','Drag-and-drop configurable widget system']},ar:{title:'لوحة تحليلات البيانات المتقدمة',desc:'لوحة تفاعلية مع أكثر من 15 نوع مخطط D3.js وبث في الوقت الفعلي.',bullets:['مكونات WCAG 2.1 AA سهلة الوصول','97/100 Lighthouse مع Virtual Scrolling','نظام Widgets قابل للتخصيص بالسحب والإفلات']},tech:['React','TypeScript','D3.js','Chart.js','TanStack Query','Tailwind CSS','WebSockets','Recharts']},
+  {cat:'fe',en:{title:'E-Commerce Storefront with PWA Features',desc:'Next.js ISR storefront achieving sub-1s TTFB and Core Web Vitals green.',bullets:['PWA: offline mode, push notifications, A2HS','Stripe checkout + infinite scroll + filtering','LCP 1.8s, CLS 0.05, FID 45ms validated']},ar:{title:'واجهة متجر إلكتروني مع ميزات PWA',desc:'واجهة Next.js ISR بأداء TTFB أقل من ثانية و Core Web Vitals خضراء.',bullets:['PWA: وضع بدون إنترنت، إشعارات، A2HS','Stripe Checkout + التمرير اللانهائي + الفلترة','LCP 1.8s, CLS 0.05, FID 45ms موثقة']},tech:['Next.js','TypeScript','Redux Toolkit','Tailwind CSS','TanStack Query','Stripe','Vercel']},
+  {cat:'fe',en:{title:'Reusable UI Component Library & Design System',desc:'60+ accessible React components published as npm package with Storybook.',bullets:['CSS custom properties theming + dark mode','TypeScript declarations + tree-shaking support','95%+ test coverage with Jest + RTL']},ar:{title:'مكتبة مكونات UI قابلة لإعادة الاستخدام ونظام التصميم',desc:'أكثر من 60 مكون React سهل الوصول منشور كحزمة npm مع Storybook.',bullets:['نظام ثيمات CSS Properties + وضع داكن','TypeScript Declarations + دعم Tree-Shaking','تغطية اختبار 95%+ مع Jest + RTL']},tech:['React','TypeScript','Storybook','CSS Modules','Sass','Jest','React Testing Library','npm']},
+  {cat:'fe',en:{title:'Real-Time Sports Live Scores Application',desc:'Angular PWA with NgRx state management and live score WebSocket streams.',bullets:['NgRx entity adapter + effects + selectors','RxJS operators for efficient data streams','< 150KB initial bundle with lazy-loaded modules']},ar:{title:'تطبيق نتائج رياضية مباشرة في الوقت الفعلي',desc:'Angular PWA مع إدارة حالة NgRx وبث WebSocket للنتائج المباشرة.',bullets:['NgRx Entity Adapter + Effects + Selectors','مشغلات RxJS لتدفقات البيانات الفعالة','حزمة أولية أقل من 150KB مع Lazy Loading']},tech:['Angular','TypeScript','NgRx','RxJS','WebSockets','Tailwind CSS','Angular PWA']},
+  {cat:'fe',en:{title:'Feature-Rich Admin Panel & CMS Frontend',desc:'RBAC-driven admin panel with advanced tables, rich text editor, and TanStack.',bullets:['Server-side sorting, filtering, pagination & CSV export','Drag-and-drop image upload + rich text editor','TanStack Query optimistic updates + stale-while-revalidate']},ar:{title:'لوحة إدارة ونظام إدارة المحتوى (CMS)',desc:'لوحة إدارة RBAC مع جداول متقدمة ومحرر نصوص غني.',bullets:['فرز وفلترة وتصفح من الخادم + تصدير CSV','رفع صور بالسحب والإفلات + محرر نصوص غني','TanStack Query: Optimistic Updates + Stale-While-Revalidate']},tech:['React','TypeScript','TanStack Query','Ant Design','Recharts','React Hook Form','Zod','Docker']},
+  // WEB / APP
+  {cat:'wa',en:{title:'Multi-Role Business Web Application Platform',desc:'Multi-role platform (admin, manager, employee, customer) with 99.8% uptime.',bullets:['Next.js App Router SSR/ISR for SEO','AWS ECS Fargate + RDS + ElastiCache + CloudFront','Slack alerting + automated rollback']},ar:{title:'منصة ويب متعددة الأدوار والصلاحيات',desc:'منصة متعددة الأدوار (مدير، موظف، عميل) بنسبة تشغيل 99.8%.',bullets:['Next.js App Router SSR/ISR لـ SEO','AWS ECS Fargate + RDS + ElastiCache + CloudFront','تنبيهات Slack + Rollback تلقائي']},tech:['Next.js','TypeScript','ASP.NET Core','PostgreSQL','Redis','Docker','AWS','TanStack Query']},
+  {cat:'wa',en:{title:'Online Booking & Appointment Reservation System',desc:'Full-featured booking platform with Stripe, SendGrid, and Twilio integration.',bullets:['Availability calendar + conflict prevention','Stripe webhooks for refunds & subscriptions','Email + SMS notification workflows']},ar:{title:'نظام الحجز والمواعيد الإلكتروني',desc:'منصة حجز كاملة مع Stripe و SendGrid و Twilio.',bullets:['تقويم متوفر + منع التعارض','Stripe Webhooks للاسترداد والاشتراكات','سير عمل إشعارات البريد + SMS']},tech:['React','TypeScript','ASP.NET Core','SQL Server','Stripe','SendGrid','Azure','Docker','Twilio']},
+  {cat:'wa',en:{title:'Headless CMS & SEO-Optimized Blog Platform',desc:'Strapi headless CMS with Next.js ISR achieving 98/100 Lighthouse SEO.',bullets:['Dynamic routing + sitemap + RSS + Open Graph','Cloudinary for WebP conversion + global CDN','Structured data: Article, BreadcrumbList']},ar:{title:'منصة CMS بدون رأس محسّنة لمحركات البحث',desc:'Strapi Headless CMS مع Next.js ISR بـ 98/100 Lighthouse SEO.',bullets:['توجيه ديناميكي + خريطة موقع + RSS + Open Graph','Cloudinary لتحويل WebP + CDN عالمي','Structured Data: Article, BreadcrumbList']},tech:['Next.js','TypeScript','Strapi','PostgreSQL','Cloudinary','Tailwind CSS','Vercel']},
+  {cat:'wa',en:{title:'Business Intelligence & KPI Web Application',desc:'BI app with customizable KPI dashboards and automated report generation.',bullets:['Python FastAPI backend for analytics computation','Automated PDF + Excel reports via Celery','Interactive D3.js charts with PNG/SVG/CSV export']},ar:{title:'تطبيق ويب للذكاء التجاري ومؤشرات الأداء',desc:'تطبيق BI مع لوحات KPI مخصصة وتقارير تلقائية.',bullets:['Python FastAPI للحسابات التحليلية','تقارير PDF + Excel تلقائية عبر Celery','مخططات D3.js تفاعلية مع تصدير PNG/SVG/CSV']},tech:['React','TypeScript','Python FastAPI','PostgreSQL','Chart.js','D3.js','Redis','Docker','Celery']},
+  {cat:'wa',en:{title:'Corporate Website with Integrated Lead CRM',desc:'Corporate site with lead management pipeline and GA4 event tracking.',bullets:['Email automation sequences via SendGrid API','GA4 custom conversion funnels & goal tracking','Nginx Gzip + critical CSS + lazy loading']},ar:{title:'موقع شركة مع نظام CRM لإدارة العملاء المحتملين',desc:'موقع شركة مع خط إدارة العملاء المحتملين وتتبع GA4.',bullets:['سلاسل بريد إلكتروني تلقائية عبر SendGrid API','GA4 Custom Conversion Funnels + Goal Tracking','Nginx Gzip + Critical CSS + Lazy Loading']},tech:['Angular','TypeScript','Node.js','MongoDB','SendGrid','Google Analytics 4','AWS','Docker']},
+  // MOBILE
+  {cat:'mb',en:{title:'Cross-Platform E-Commerce Mobile Application',desc:'Full Flutter e-commerce app published on Google Play & App Store.',bullets:['BLoC + Clean Architecture (data/domain/presentation)','Stripe PCI-compliant checkout + Firebase FCM','Offline-first product catalog with Hive caching']},ar:{title:'تطبيق موبايل للتجارة الإلكترونية متعدد المنصات',desc:'تطبيق Flutter تجارة إلكترونية كامل منشور على Google Play & App Store.',bullets:['BLoC + Clean Architecture (بيانات/منطق/عرض)','Stripe PCI + Firebase FCM للإشعارات','كاتالوج منتجات Offline-First بـ Hive Caching']},tech:['Flutter','Dart','BLoC','Firebase Auth','FCM','Hive','Stripe','Fastlane','GitHub Actions']},
+  {cat:'mb',en:{title:'Real-Time Chat & Social Messaging Application',desc:'Flutter messaging app with E2E encryption, group chats, and media sharing.',bullets:['Firebase Firestore with offline persistence','RSA end-to-end encryption for private chats','Rich push notifications with deep-link routing']},ar:{title:'تطبيق الدردشة والتواصل الاجتماعي في الوقت الفعلي',desc:'تطبيق مراسلة Flutter مع تشفير E2E ومحادثات جماعية ومشاركة وسائط.',bullets:['Firebase Firestore مع Offline Persistence','تشفير RSA End-to-End للمحادثات الخاصة','إشعارات غنية مع Deep-Link Routing']},tech:['Flutter','Dart','Firebase','Firestore','FCM','WebSockets','Provider','SQLite']},
+  {cat:'mb',en:{title:'Health & Fitness Tracking Application',desc:'Comprehensive fitness tracker with Google Fit / Apple HealthKit integration.',bullets:['Offline-first with SQLite + background HTTP sync','Custom Flutter animation charts for progress','BLoC for workout, nutrition & body tracking']},ar:{title:'تطبيق تتبع الصحة واللياقة البدنية',desc:'تطبيق لياقة شامل مع تكامل Google Fit / Apple HealthKit.',bullets:['Offline-First مع SQLite + مزامنة HTTP خلفية','مخططات Flutter متحركة مخصصة للتقدم','BLoC لتتبع التمارين والتغذية والجسم']},tech:['Flutter','Dart','BLoC','Google Fit API','Apple HealthKit','SQLite','REST API']},
+  {cat:'mb',en:{title:'Food Delivery & Restaurant Discovery App',desc:'Location-aware food app with Google Maps live tracking & geofencing.',bullets:['Real-time order tracking with geofencing','Riverpod reactive state management','Parallel Android/iOS CI/CD via Fastlane']},ar:{title:'تطبيق توصيل الطعام واكتشاف المطاعم',desc:'تطبيق طعام يعتمد على الموقع مع تتبع مباشر بـ Google Maps.',bullets:['تتبع الطلبات المباشر مع Geofencing','إدارة حالة Riverpod التفاعلية','CI/CD متوازي لـ Android/iOS عبر Fastlane']},tech:['Flutter','Dart','Riverpod','Google Maps API','Firebase Firestore','FCM','Stripe','Fastlane']},
+  {cat:'mb',en:{title:'Task & Project Management Mobile Application',desc:'Collaborative Kanban app with 60fps drag-and-drop and offline-first sync.',bullets:['Full Clean Architecture with BLoC presentation','WorkManager for background data synchronization','Docker CI/CD via GitHub Actions for consistent builds']},ar:{title:'تطبيق إدارة المهام والمشاريع',desc:'تطبيق Kanban تشاركي بسحب وإفلات 60fps ومزامنة Offline-First.',bullets:['Clean Architecture كاملة مع BLoC Presentation','WorkManager للمزامنة الخلفية للبيانات','Docker CI/CD عبر GitHub Actions لبيئات بناء متسقة']},tech:['Flutter','Dart','BLoC','Hive','Dio','WorkManager','Docker','GitHub Actions']},
+  // FEATURED — REAL PRODUCTION PROJECTS
+  {real:true,github:'https://github.com/Anas379110/syrian-clothing-marketplace',en:{title:'Syrian Clothing Marketplace Platform',desc:'Multi-vendor e-commerce marketplace for Syrian clothing sellers with escrow-protected payments and local payment integration.',bullets:['Modular Monolith (NestJS + Prisma) designed to split into microservices when needed','Escrow payment flow protecting buyers & sellers, plus Sham Cash and cash-on-delivery support','PWA storefront (Next.js + Tailwind) with full product search, filtering & order tracking']},ar:{title:'منصة سوق الملابس السورية',desc:'منصة تجارة إلكترونية متعددة البائعين لبيع الملابس، مع نظام دفع محمي بـ Escrow وربط دفع محلي.',bullets:['معمارية Modular Monolith (NestJS + Prisma) مصممة للانتقال لاحقاً إلى Microservices عند الحاجة','نظام Escrow يحمي المشتري والبائع، إضافة لدعم شام كاش والدفع عند الاستلام','واجهة PWA (Next.js + Tailwind) مع بحث وفلترة كاملة وتتبع حالة الطلب']},tech:['Next.js','NestJS','TypeScript','PostgreSQL','Prisma','Tailwind CSS','PWA']},
+  {real:true,github:'https://github.com/Anas379110/cosmetic-lady',en:{title:'Cosmetic Lady — Beauty E-Commerce Platform',desc:'Specialized e-commerce PWA for cosmetics targeting the Syrian market, with a full Arabic RTL experience.',bullets:['Supabase-backed authentication and PostgreSQL database with Prisma ORM','Local payment integration (Sham Cash) with cash-on-delivery fallback','Full RTL Arabic UI with cart, checkout & admin product management']},ar:{title:'Cosmetic Lady — منصة تجميل إلكترونية',desc:'منصة تجارة إلكترونية متخصصة بمواد التجميل للسوق السوري، بواجهة عربية RTL كاملة.',bullets:['مصادقة وقاعدة بيانات عبر Supabase مع Prisma ORM','دفع محلي عبر شام كاش مع خيار الدفع عند الاستلام','واجهة عربية RTL كاملة مع سلة شراء ولوحة إدارة منتجات']},tech:['Next.js','TypeScript','Supabase','Prisma','PostgreSQL','Tailwind CSS','Zod']},
+  {real:true,github:'https://github.com/Anas379110/DVLD',hideLive:true,en:{title:'DVLD — Driving License Management System',desc:'Desktop system automating the 7 core services of a driving-license department, built on a 3-tier C# architecture.',bullets:['3-tier architecture: Data Access, Business Logic & WinForms UI layers','Parameterized SQL throughout to eliminate SQL injection risk','Business logic layer covered with xUnit tests, decoupled from the database']},ar:{title:'DVLD — نظام إدارة تراخيص القيادة',desc:'نظام سطح مكتب يؤتمت الخدمات السبع الأساسية لدائرة ترخيص السواقين، ببنية 3 طبقات بلغة C#.',bullets:['معمارية 3 طبقات: الوصول للبيانات، منطق الأعمال، وواجهة WinForms','استعلامات SQL بارامترية بالكامل لمنع أي ثغرة SQL Injection','طبقة منطق الأعمال مغطاة باختبارات xUnit ومستقلة عن قاعدة البيانات']},tech:['C#','.NET 8','WinForms','SQL Server','ADO.NET','xUnit']},
+  {real:true,github:'https://github.com/Anas379110/hms-project',en:{title:'Hospital Management System (HMS)',desc:'Full hospital management platform for 10,000+ patients, covering 11 modules across 8 user roles, on-premise and bilingual.',bullets:['Modular Monolith (NestJS + PostgreSQL + Prisma) covering registration, EHR, pharmacy, lab/radiology & billing','Role-based access control across 8 distinct user roles','Resilient-by-default design built for unstable power/internet environments']},ar:{title:'نظام إدارة المشافي (HMS)',desc:'منصة شاملة لإدارة مشفى بسعة أكثر من 10,000 مريض، تغطي 11 وحدة و8 أدوار مستخدمين، عربي/إنجليزي.',bullets:['Modular Monolith (NestJS + PostgreSQL + Prisma) يغطي الاستقبال والسجل الطبي والصيدلية والمختبر والفوترة','صلاحيات مبنية على الأدوار (RBAC) عبر 8 أدوار مستخدمين مختلفة','تصميم Resilient-by-default يعمل بموثوقية رغم تذبذب الكهرباء والإنترنت']},tech:['NestJS','TypeScript','PostgreSQL','Prisma','React','JWT']},
+  {real:true,github:'https://github.com/Anas379110/school-management-system',en:{title:'School Management System — White-Label',desc:'True white-label school platform, deployed as an isolated instance per client school with full branding, academics & billing.',bullets:['Repeatable deployment template: separate app + database per school','Bilingual Arabic/English with full RTL/LTR support via next-intl','Academic, attendance, grading & billing modules with role-based dashboards']},ar:{title:'نظام إدارة المدارس — نسخة White-Label',desc:'منصة مدرسية White-Label حقيقية، تُنشر كنسخة مستقلة كاملة بعلامة تجارية خاصة لكل مدرسة عميلة.',bullets:['قالب نشر قابل للتكرار: تطبيق وقاعدة بيانات مستقلة لكل مدرسة','ثنائية اللغة عربي/إنجليزي بدعم RTL/LTR كامل عبر next-intl','وحدات أكاديمية وحضور ودرجات وفوترة مع لوحات تحكم حسب الدور']},tech:['Next.js','TypeScript','Prisma','PostgreSQL','next-intl','Tailwind CSS','Zod']},
+];
+
+// ── STATE ──────────────────────────────────────────────────────────────────────
+let currentLang = 'en';
+
+// ── RENDER PROJECTS ────────────────────────────────────────────────────────────
+function renderProjects(filter){
+  const grid = document.getElementById('projects-grid');
+  grid.innerHTML = '';
+  const catColors = {se:'cat-se',be:'cat-be',fs:'cat-fs',fe:'cat-fe',wa:'cat-wa',mb:'cat-mb'};
+  const catLabels = {
+    se:{en:'Software Eng.',ar:'هندسة برمجيات'},
+    be:{en:'Backend',ar:'خلفية'},
+    fs:{en:'Full Stack',ar:'متكامل'},
+    fe:{en:'Frontend',ar:'أمامية'},
+    wa:{en:'Web / App',ar:'ويب / تطبيق'},
+    mb:{en:'Mobile',ar:'موبايل'}
+  };
+  PROJECTS.forEach(p => {
+    const show = (filter === 'all' || p.cat === filter);
+    const d = p[currentLang];
+    const label = p.cat && catLabels[p.cat] ? catLabels[p.cat][currentLang] : null;
+    const badge = label ? `<span class="proj-cat-badge ${catColors[p.cat]}">${label}</span>` : '';
+    const githubHref = p.github || '#';
+    const githubTarget = p.github ? ' target="_blank"' : '';
+    const liveLink = p.hideLive ? '' : `<a href="#" class="proj-link">↗ Live Demo</a>`;
+    const card = document.createElement('div');
+    card.className = 'proj-card' + (show ? '' : ' hidden');
+    card.dataset.cat = p.cat || '';
+    card.innerHTML = `
+      <div class="proj-header">
+        <div class="proj-title">${d.title}</div>
+        ${badge}
+      </div>
+      <p class="proj-desc">${d.desc}</p>
+      <ul class="proj-bullets">${d.bullets.map(b=>`<li>${b}</li>`).join('')}</ul>
+      <div class="proj-tech">${p.tech.map(t=>`<span class="tech-tag">${t}</span>`).join('')}</div>
+      <div class="proj-links">
+        <a href="${githubHref}"${githubTarget} class="proj-link">⬡ GitHub</a>
+        ${liveLink}
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+function filterProjects(cat, btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.proj-card').forEach(c=>{
+    c.classList.toggle('hidden', cat !== 'all' && c.dataset.cat !== cat);
+  });
+}
+
+// ── LANGUAGE TOGGLE ────────────────────────────────────────────────────────────
+const LANG_FILTER = {
+  all:{en:'All (35)',ar:'الكل (35)'},
+  se:{en:'Software Eng.',ar:'هندسة برمجيات'},
+  be:{en:'Backend',ar:'خلفية'},
+  fs:{en:'Full Stack',ar:'متكامل'},
+  fe:{en:'Frontend',ar:'أمامية'},
+  wa:{en:'Web / App',ar:'ويب / تطبيق'},
+  mb:{en:'Mobile',ar:'موبايل'},
+};
+
+function toggleLang(){
+  currentLang = currentLang === 'en' ? 'ar' : 'en';
+  const html = document.documentElement;
+  html.lang = currentLang;
+  html.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  html.classList.toggle('ar', currentLang === 'ar');
+  document.getElementById('lang-btn').textContent = currentLang === 'en' ? 'عربي' : 'EN';
+  // Update translatable elements
+  document.querySelectorAll('.t').forEach(el => {
+    el.textContent = el.dataset[currentLang] || el.textContent;
+  });
+  // Update filter buttons text
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    const cat = btn.dataset.cat;
+    if(cat && LANG_FILTER[cat]) btn.textContent = LANG_FILTER[cat][currentLang];
+  });
+  // Re-render projects
+  const activeCat = document.querySelector('.filter-btn.active')?.dataset.cat || 'all';
+  renderProjects(activeCat);
+}
+
+// ── TYPEWRITER ────────────────────────────────────────────────────────────────
+const ROLES_EN = ['Software Engineer','Backend Developer','Full Stack Developer','Frontend Developer','Web / App Developer','Mobile App Developer'];
+const ROLES_AR = ['مهندس برمجيات','مطور واجهة خلفية','مطور متكامل','مطور واجهة أمامية','مطور ويب وتطبيقات','مطور تطبيقات موبايل'];
+let rIdx=0, cIdx=0, del=false;
+function typeWriter(){
+  const roles = currentLang==='ar'?ROLES_AR:ROLES_EN;
+  const el = document.getElementById('typewriter');
+  const current = roles[rIdx];
+  if(!del){
+    el.textContent = current.slice(0,++cIdx);
+    if(cIdx===current.length){ del=true; setTimeout(typeWriter,1800); return; }
+  } else {
+    el.textContent = current.slice(0,--cIdx);
+    if(cIdx===0){ del=false; rIdx=(rIdx+1)%roles.length; }
+  }
+  setTimeout(typeWriter, del?60:100);
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────────────
+renderProjects('all');
+typeWriter();
+</script>
+</body>
+</html>
