@@ -158,6 +158,7 @@ footer span{color:#fff;font-weight:600}
       <li><a href="#about" class="t" data-en="About" data-ar="عني">About</a></li>
       <li><a href="#skills" class="t" data-en="Skills" data-ar="المهارات">Skills</a></li>
       <li><a href="#projects" class="t" data-en="Projects" data-ar="المشاريع">Projects</a></li>
+      <li><a href="#ai-workflow" class="t" data-en="AI Workflow" data-ar="سير عمل AI">AI Workflow</a></li>
       <li><a href="#contact" class="t" data-en="Contact" data-ar="التواصل">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -323,6 +324,59 @@ footer span{color:#fff;font-weight:600}
       <button class="filter-btn t" data-en="Mobile" data-ar="موبايل" data-cat="mb" onclick="filterProjects('mb',this)">Mobile</button>
     </div>
     <div class="projects-grid" id="projects-grid"></div>
+  </div>
+</section>
+
+<!-- AI WORKFLOW -->
+<section id="ai-workflow" class="skills-bg">
+  <div class="section-inner">
+    <div class="section-tag t" data-en="AI-POWERED WORKFLOW" data-ar="سير عمل مدعوم بالذكاء الاصطناعي">AI-POWERED WORKFLOW</div>
+    <h2 class="section-title t" data-en="Configuring AI Coding Agents Into My Development Workflow" data-ar="إعداد وكلاء الذكاء الاصطناعي البرمجية ضمن سير عملي التطويري">Configuring AI Coding Agents Into My Development Workflow</h2>
+    <p class="section-sub t" data-en="Beyond writing code, I configure coding agents (Claude Code, Copilot, Codex CLI, Gemini CLI) with project memory files, skills, hooks, and MCP servers — turning any stack into a repeatable, auditable workflow while architecture and security decisions stay mine." data-ar="إلى جانب كتابة الكود، أُعدّ وكلاء برمجية (Claude Code وCopilot وCodex CLI وGemini CLI) بملفات ذاكرة المشروع وSkills وHooks وخوادم MCP — لتحويل أي مكدّس تقني إلى سير عمل قابل للتكرار والتدقيق، مع بقاء قرارات المعمارية والأمان بيدي.">Beyond writing code, I configure coding agents (Claude Code, Copilot, Codex CLI, Gemini CLI) with project memory files, skills, hooks, and MCP servers — turning any stack into a repeatable, auditable workflow while architecture and security decisions stay mine.</p>
+
+    <div class="skills-grid">
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="Agent Setup" data-ar="إعداد الوكيل">Agent Setup</div>
+        <div class="tags">
+          <span class="tag">CLAUDE.md / AGENTS.md</span>
+          <span class="tag">Feature-scaffolding Agent</span>
+          <span class="tag">Code Review Subagent</span>
+          <span class="tag">Test-writing Agent</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="Tools, Skills, Hooks &amp; MCP" data-ar="الأدوات وSkills وHooks وMCP">Tools, Skills, Hooks &amp; MCP</div>
+        <div class="tags">
+          <span class="tag">PROJECT.md / DECISIONS.md</span>
+          <span class="tag">Pre-commit Security Hook</span>
+          <span class="tag">PostgreSQL / SQL Server MCP</span>
+          <span class="tag">Git / GitHub MCP</span>
+          <span class="tag">Docker / CI Pipeline</span>
+        </div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-title t" data-en="How I Discover What a Client Wants" data-ar="كيف أكتشف ما يريده العميل">How I Discover What a Client Wants</div>
+        <ul class="proj-bullets">
+          <li class="t" data-en="Problem, end user &amp; acceptance criteria" data-ar="المشكلة والمستخدم النهائي ومعايير القبول">Problem, end user &amp; acceptance criteria</li>
+          <li class="t" data-en="Existing constraints: hosting, database, current team" data-ar="القيود القائمة: الاستضافة وقاعدة البيانات والفريق الحالي">Existing constraints: hosting, database, current team</li>
+          <li class="t" data-en="Which actions always need approval before production" data-ar="ما الإجراءات التي تتطلب دائمًا موافقة قبل النشر الإنتاجي">Which actions always need approval before production</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="about-highlights" style="margin-top:2rem">
+      <div class="highlight"><span class="hl-icon">1️⃣</span><span class="t" data-en="Document scope &amp; decisions in PROJECT.md / DECISIONS.md" data-ar="توثيق النطاق والقرارات في PROJECT.md وDECISIONS.md">Document scope &amp; decisions in PROJECT.md / DECISIONS.md</span></div>
+      <div class="highlight"><span class="hl-icon">2️⃣</span><span class="t" data-en="Generate &amp; hand-review the agent's memory file" data-ar="توليد ملف ذاكرة الوكيل ومراجعته يدويًا">Generate &amp; hand-review the agent's memory file</span></div>
+      <div class="highlight"><span class="hl-icon">3️⃣</span><span class="t" data-en="Wire up one skill, one hook &amp; one MCP server matching the actual project" data-ar="إعداد مهارة وHook وMCP واحد مطابق للمشروع الفعلي">Wire up one skill, one hook &amp; one MCP server matching the actual project</span></div>
+      <div class="highlight"><span class="hl-icon">4️⃣</span><span class="t" data-en="Agent scaffolds the feature; I review architecture &amp; security" data-ar="الوكيل يبني هيكل الميزة؛ وأنا أراجع المعمارية والأمان">Agent scaffolds the feature; I review architecture &amp; security</span></div>
+      <div class="highlight"><span class="hl-icon">5️⃣</span><span class="t" data-en="CI checks, tests &amp; first commit shared with the client" data-ar="فحوصات CI والاختبارات وأول Commit يُشارَك مع العميل">CI checks, tests &amp; first commit shared with the client</span></div>
+    </div>
+
+    <p style="margin-top:2rem;color:var(--muted);font-style:italic;font-size:.9rem" class="t"
+      data-en="Same methodology — agent setup → tools &amp; MCP → client discovery → fast workflow — adapts to any stack: .NET, Node, Next.js, or Flutter."
+      data-ar="المنهجية نفسها — إعداد الوكيل ← الأدوات وMCP ← اكتشاف متطلبات العميل ← سير عمل سريع — تتكيف مع أي مكدّس تقني: .NET أو Node أو Next.js أو Flutter.">
+      Same methodology — agent setup → tools &amp; MCP → client discovery → fast workflow — adapts to any stack: .NET, Node, Next.js, or Flutter.
+    </p>
   </div>
 </section>
 
