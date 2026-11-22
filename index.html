@@ -131,6 +131,31 @@ html.ar .proj-bullets li::before{content:'◂'}
 .cat-cw{background:#FDF4FF;color:#A21CAF}
 .cat-ec{background:#FEF2F2;color:#B91C1C}
 
+
+/* ── ONETECH ── */
+.onetech-bg{background:var(--surf)}
+.ot-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:start}
+.ot-brand{display:flex;align-items:center;gap:.9rem;margin-bottom:1.25rem}
+.ot-logo{width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--violet));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:1.15rem;box-shadow:0 8px 20px rgba(37,99,235,.25);flex-shrink:0}
+.ot-name{font-size:1.35rem;font-weight:800;letter-spacing:-.3px}
+.ot-slogan{font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:1px}
+.ot-desc{color:var(--muted);font-size:.95rem;line-height:1.8;margin-bottom:1.25rem}
+.ot-points{list-style:none;display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.75rem}
+.ot-points li{font-size:.88rem;color:var(--muted);display:flex;gap:.5rem;line-height:1.5}
+.ot-points li::before{content:'\25B8';color:var(--blue);flex-shrink:0;margin-top:.05rem}
+html.ar .ot-points li::before{content:'\25C2'}
+.ot-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.75rem;box-shadow:var(--sh)}
+.ot-card-title{font-size:.85rem;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.ot-card-title::before{content:'';display:block;width:4px;height:16px;background:linear-gradient(var(--blue),var(--violet));border-radius:2px}
+.ot-follow{margin-top:1.5rem}
+.ot-contact{display:flex;flex-direction:column;gap:.6rem}
+.ot-contact .contact-card{background:var(--surf)}
+.ot-socials{display:flex;flex-wrap:wrap;gap:.5rem}
+.hero-company{display:flex;align-items:center;gap:.4rem;font-size:.9rem;font-weight:600;color:var(--muted);margin:-1rem 0 1.5rem}
+.hero-company a{color:var(--blue);font-weight:700}
+.hero-company a:hover{color:var(--violet)}
+@media(max-width:900px){.ot-grid{grid-template-columns:1fr}}
+
 /* ── CONTACT ── */
 .contact-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem}
 .contact-card{background:var(--surf);border:1px solid var(--border);border-radius:var(--radius);padding:1.25rem 1.5rem;display:flex;align-items:center;gap:1rem;transition:.2s;font-size:.9rem;font-weight:500}
@@ -164,6 +189,7 @@ footer span{color:#fff;font-weight:600}
   <div class="nav-inner">
     <div class="logo">AH</div>
     <ul class="nav-links">
+      <li><a href="#onetech" class="t" data-en="My Company" data-ar="شركتي">My Company</a></li>
       <li><a href="#about" class="t" data-en="About" data-ar="عني">About</a></li>
       <li><a href="#skills" class="t" data-en="Skills" data-ar="المهارات">Skills</a></li>
       <li><a href="#projects" class="t" data-en="Projects" data-ar="المشاريع">Projects</a></li>
@@ -195,6 +221,10 @@ footer span{color:#fff;font-weight:600}
         data-ar="مهندس برمجيات متعدد التخصصات بخبرة 10 سنوات في تطوير البرمجيات، تطبيقات الويب والموبايل، والبنية السحابية. أبني حلولاً رقمية قابلة للتوسع، آمنة، وعالية الأداء.">
         Multidisciplinary technology professional with 10 years of experience in software engineering, full-stack development, mobile apps, and cloud infrastructure. Building scalable, secure, and high-performance digital solutions.
       </p>
+      <div class="hero-company">
+        <span class="t" data-en="🏢 Founder of" data-ar="🏢 مؤسس">🏢 Founder of</span>
+        <a href="https://onetech-site.onrender.com/" target="_blank">OneTech Solutions ↗</a>
+      </div>
       <div class="hero-btns">
         <a href="#projects" class="btn-primary t" data-en="View Projects" data-ar="استعرض المشاريع">View Projects</a>
         <a href="https://github.com/Anas379110" target="_blank" class="btn-outline t" data-en="View GitHub" data-ar="زيارة GitHub">View GitHub</a>
@@ -215,6 +245,53 @@ footer span{color:#fff;font-weight:600}
         <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="c-str">"Docker"</span>, <span class="c-str">"AWS"</span></div>
         <div class="code-line">&nbsp;&nbsp;]</div>
         <div class="code-line">}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ONETECH -->
+<section id="onetech" class="onetech-bg">
+  <div class="section-inner">
+    <div class="section-tag t" data-en="MY COMPANY" data-ar="شركتي">MY COMPANY</div>
+    <h2 class="section-title">OneTech Solutions</h2>
+    <div class="ot-grid">
+      <div>
+        <div class="ot-brand">
+          <div class="ot-logo">OT</div>
+          <div>
+            <div class="ot-name">OneTech Solutions</div>
+            <div class="ot-slogan" dir="ltr">Innovate • Develop • Solve</div>
+          </div>
+        </div>
+        <p class="ot-desc t"
+          data-en="I founded OneTech Solutions to build Arabic-first automation systems powered by AI. The launch plan starts with three services: receiving your customers on their channels, order &amp; inventory alerts, and an Arabic AI assistant that answers your customers' questions from your own files — with results measured in real before-and-after numbers."
+          data-ar="أسّست OneTech Solutions لبناء أنظمة أتمتة مدعومة بالذكاء الاصطناعي تعمل بالعربية. تبدأ خطة الإطلاق بثلاث خدمات: استقبال عملائك على قنواتهم، تنبيهات الطلبات والمخزون، ومساعد ذكاء اصطناعي عربي يجيب عن أسئلة زبائنك من ملفاتك — مع قياس النتيجة بأرقام حقيقية قبل وبعد.">
+          I founded OneTech Solutions to build Arabic-first automation systems powered by AI. The launch plan starts with three services: receiving your customers on their channels, order &amp; inventory alerts, and an Arabic AI assistant that answers your customers' questions from your own files — with results measured in real before-and-after numbers.
+        </p>
+        <ul class="ot-points">
+          <li class="t" data-en="Faster replies to your customers on the channels they already use" data-ar="رد أسرع على عملائك على القنوات التي يستخدمونها">Faster replies to your customers on the channels they already use</li>
+          <li class="t" data-en="Fewer errors in orders, invoices and inventory" data-ar="أخطاء أقل في الطلبات والفواتير والمخزون">Fewer errors in orders, invoices and inventory</li>
+          <li class="t" data-en="Time saved for your team every month, measured before and after" data-ar="وقت موفَّر لفريقك كل شهر، تقيسه أرقام قبل وبعد">Time saved for your team every month, measured before and after</li>
+        </ul>
+        <a href="https://onetech-site.onrender.com/" target="_blank" class="btn-primary t" data-en="Visit Company Website" data-ar="زيارة موقع الشركة">Visit Company Website</a>
+      </div>
+      <div class="ot-card">
+        <div class="ot-card-title t" data-en="Company Contact" data-ar="تواصل الشركة">Company Contact</div>
+        <div class="ot-contact">
+          <a href="https://wa.me/963995263075" target="_blank" class="contact-card"><span class="contact-icon">💬</span><span dir="ltr">+963 995 263 075</span></a>
+          <a href="mailto:onetechmena@proton.me" class="contact-card"><span class="contact-icon">📧</span><span dir="ltr">onetechmena@proton.me</span></a>
+          <a href="https://onetech-site.onrender.com/" target="_blank" class="contact-card"><span class="contact-icon">🌐</span><span dir="ltr">onetech-site.onrender.com</span></a>
+        </div>
+        <div class="ot-card-title ot-follow t" data-en="Follow OneTech" data-ar="تابع OneTech">Follow OneTech</div>
+        <div class="ot-socials">
+          <a class="proj-link" href="https://www.youtube.com/@OneTechMENA" target="_blank">▶️ YouTube</a>
+          <a class="proj-link" href="https://t.me/OneTechMENA" target="_blank">✈️ Telegram</a>
+          <a class="proj-link" href="https://www.linkedin.com/company/onetechmena/" target="_blank">💼 LinkedIn</a>
+          <a class="proj-link" href="https://www.facebook.com/61596958526046/" target="_blank">📘 Facebook</a>
+          <a class="proj-link" href="https://www.instagram.com/anas379110alhomsi" target="_blank">📸 Instagram</a>
+          <a class="proj-link" href="https://www.snapchat.com/@feminset" target="_blank">👻 Snapchat</a>
+        </div>
       </div>
     </div>
   </div>
