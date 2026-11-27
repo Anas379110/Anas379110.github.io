@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
+<meta name="theme-color" content="#0b0f17">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="https://anas379110.github.io/designer/">
 <title>Anas Al-Homsi أنس الحمصي UX/UI and Graphic Design Portfolio</title>
@@ -155,6 +156,68 @@ section{scroll-margin-top:90px}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 .projects-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr))}.proj-card{min-width:0;overflow-wrap:anywhere}.proj-header{flex-wrap:wrap}
 .ico{width:1.3em;height:1.3em;vertical-align:-.25em;flex-shrink:0}.num-ico{display:inline-flex;align-items:center;justify-content:center;width:1.6rem;height:1.6rem;border-radius:8px;background:var(--blue);color:#fff;font-size:.85rem;font-weight:700}.contact-card{align-items:center}
+
+/* ── MARKETING-ALIGNED DARK THEME ── */
+:root{--bg:#0b0f17;--card:#121826;--surf:#0e1320;--surf2:rgba(94,234,212,.08);--text:#e8ecf4;--muted:#9aa6bd;--border:#232c40;--blue:#5eead4;--violet:#818cf8;--navy:#e8ecf4;--sh:none;--radius:16px}
+body{background:var(--bg);color:var(--text);line-height:1.65}
+nav{background:rgba(11,15,23,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+.nav-inner{height:60px;max-width:1100px}
+.logo{font-size:1.05rem;letter-spacing:.5px;background:none;-webkit-text-fill-color:var(--text);color:var(--text)}
+.nav-links a{font-size:.88rem}
+.lang-btn{color:var(--blue);border-width:1px}
+.menu-btn{background:var(--card);color:var(--text)}
+.hero{min-height:0;padding:7rem 5% 4rem;background:radial-gradient(800px 400px at 80% -10%,rgba(129,140,248,.25),transparent),radial-gradient(600px 300px at 0 0,rgba(94,234,212,.15),transparent),var(--bg)}
+.hero::before,.hero::after{display:none}
+.hero-inner{max-width:1100px}
+.hero-badge{background:transparent;border:1px solid var(--border);color:var(--blue);font-weight:500}
+.hero-name-en{font-size:clamp(2.4rem,6vw,4.2rem);font-weight:800;letter-spacing:-1.5px;line-height:1.08}
+.hero-name-ar{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--muted)}
+html:not(.ar) .hero-name-en,html.ar .hero-name-ar{background:linear-gradient(90deg,#5eead4,#818cf8);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+html.ar .hero-name-en{font-size:clamp(1.8rem,4vw,2.8rem);color:var(--muted)}
+html.ar .hero-name-ar{font-size:clamp(2.4rem,6vw,4.2rem)}
+.hero-role{color:var(--text);font-size:1.3rem}
+.cursor{background:var(--blue)}
+.hero-bio{max-width:540px;font-size:1.05rem}
+.btn-primary{background:linear-gradient(90deg,#5eead4,#818cf8);color:#06101a;box-shadow:none;border-radius:10px;padding:.8rem 1.6rem}
+.btn-primary:hover{box-shadow:0 8px 24px rgba(94,234,212,.25)}
+.btn-outline{border:1px solid var(--border);border-radius:10px;padding:.8rem 1.6rem}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue);background:transparent}
+.code-card{background:var(--card);border:1px solid var(--border);box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.c-comment{color:#6b7893}
+.stats{background:transparent;padding:0 5% 1rem}
+.stats-inner{max-width:1100px;gap:1rem;text-align:left}
+html.ar .stats-inner{text-align:right}
+.stats-inner>div{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:1.4rem}
+.stat-num{color:var(--blue);font-size:2.2rem}
+.stat-label{color:var(--muted);font-size:.88rem}
+section{padding:4.5rem 5%}
+.section-inner{max-width:1100px}
+.section-tag{color:var(--violet);letter-spacing:1.5px}
+.section-title{font-size:2rem}
+.highlight{background:var(--card);border:1px solid var(--border)}
+.skills-bg,.crossover-bg{background:var(--surf)}
+.skill-cat,.proj-card{background:var(--card);border:1px solid var(--border);box-shadow:none}
+.skill-cat-title{color:var(--violet)}
+.tag,.tech-tag{background:transparent;color:var(--muted);border:1px solid var(--border)}
+.tag{border-radius:8px}
+.filter-btn{border:1px solid var(--border)}
+.filter-btn:hover{border-color:var(--blue);color:var(--blue)}
+.filter-btn.active{background:var(--blue);color:#06101a;border-color:var(--blue)}
+.proj-card:hover{box-shadow:0 16px 40px rgba(0,0,0,.4);border-color:rgba(94,234,212,.35)}
+.proj-title{color:var(--text)}
+.cat-gd{background:rgba(129,140,248,.14);color:#a5b0ff}
+.cat-ux{background:rgba(94,234,212,.12);color:#5eead4}
+.cat-web{background:rgba(74,222,128,.12);color:#86efac}
+.crossover-note{color:#fdba74;background:rgba(251,146,60,.1);border-color:rgba(251,146,60,.3)}
+.contact-card{background:var(--card);border:1px solid var(--border)}
+.contact-card:hover{border-color:var(--blue);background:var(--card);color:var(--blue)}
+.num-ico{background:linear-gradient(135deg,#5eead4,#818cf8);color:#06101a}
+footer{background:transparent;border-top:1px solid var(--border);color:var(--muted)}
+footer span{color:var(--text)}
+:focus-visible{outline-color:var(--blue)}
+@media(max-width:900px){.nav-links.is-open{background:var(--bg)}.hero{padding:5.5rem 5% 3rem}}
+@media(max-width:600px){.stats-inner{gap:.75rem}.stats-inner>div{padding:1rem}.stat-num{font-size:1.8rem}}
+footer span{unicode-bidi:isolate}
 </style>
 </head>
 <body>
